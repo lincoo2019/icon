@@ -1,4 +1,4 @@
-const sizes = [512, 256, 128, 64, 32, 16];
+const sizes = [1024, 512, 256, 128, 64, 32, 16];
 const dropZone = document.getElementById('drop-zone');
 const output = document.getElementById('output');
 
@@ -62,7 +62,7 @@ function createThumbnail(img, size) {
   imgElement.src = canvas.toDataURL('image/png');
   
   const info = document.createElement('div');
-  info.innerHTML = `${size}x${size}`;
+  info.innerHTML = `${size}x${size}${size === 1024 ? '（原始尺寸）' : ''}`;
   
   const downloadBtn = document.createElement('button');
   downloadBtn.className = 'download-btn';
